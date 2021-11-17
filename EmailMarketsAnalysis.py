@@ -22,24 +22,13 @@ def compare_emails(emailsOpened, emailsClicked):
     for email in emailsOpened:
         if email not in emailsClicked:
             notClickedEmails.append(email)
-    print(notClickedEmails)
     return notClickedEmails
 
-
-'''
-    for email in notClickedEmails:
-        value_dic[email] = value_dic.get(email, 0) + 1
-    sortedDic = [(k, value_dic[k]) for k in value_dic]
-    sortedDic.sort(key=lambda x: x[1], reverse=True)
-
-'''
-#print("SORTED DIC: ", sortedDic)
-
-
 def main():
-    emailsOpened = get_emails("Gale30DayOpened.txt")
-    emailsClicked = get_emails("Gale30DayClicked.txt")
+    emailsOpened = get_emails("Gale30DayOpened.txt") #change this file name
+    emailsClicked = get_emails("Gale30DayClicked.txt") #change this file name
     non_clickers = compare_emails(emailsOpened, emailsClicked)
+    print(non_clickers)
 
 
 if __name__ == "__main__":
